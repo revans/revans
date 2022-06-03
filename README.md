@@ -1,6 +1,6 @@
-<img align="left" src="/metrics.classic.svg" alt="General" width="400">
-<img align="right" src="/achievements.svg" alt="Achievements" width="400">
-<img align="left" src="/metrics.plugin.habits.facts.svg" alt="Recent Coding Habits" width="400">
+<img align="left" src="/metrics.classic.svg" alt="General" width="390">
+<img align="right" src="/achievements.svg" alt="Achievements" width="390">
+<img align="left" src="/metrics.plugin.habits.facts.svg" alt="Recent Coding Habits" width="390">
 
 
 
