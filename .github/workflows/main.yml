@@ -29,9 +29,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_achievements: yes
-          plugin_achievements_only: >-
-            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
-            scripter, packager, explorer, infographile, manager
           plugin_achievements_display: detailed
           plugin_achievements_threshold: X
           
@@ -92,17 +89,6 @@ jobs:
           plugin_habits_charts: no
           config_timezone: America/Boise
 
-      - name: Recent activity charts
-        uses: lowlighter/metrics@main
-        with:
-          filename: metrics.plugin.habits.charts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          config_timezone: America/Boise
-
       - name: Recently starred
         uses: lowlighter/metrics@main
         with:
@@ -111,13 +97,3 @@ jobs:
           base: ""
           plugin_stars: yes
           plugin_stars_limit: 5
-
-      - name: Indepth analysis of Notable Contributions
-        uses: lowlighter/metrics@main
-        with:
-          filename: metrics.plugin.notable.indepth.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_notable: yes
-          plugin_notable_indepth: yes
-          plugin_notable_repositories: yes
