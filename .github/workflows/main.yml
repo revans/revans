@@ -119,3 +119,12 @@ jobs:
           plugin_notable: yes
           plugin_notable_indepth: yes
           plugin_notable_repositories: yes
+
+      - name: Indepth analysis
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.plugin.followup.indepth.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_followup: yes
+          plugin_followup_indepth: yes
