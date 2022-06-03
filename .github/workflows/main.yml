@@ -27,7 +27,7 @@ jobs:
           plugin_fortune: yes
           
       - name: Most used (with details)
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@main
         with:
           filename: metrics.plugin.languages.details.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -39,7 +39,7 @@ jobs:
           plugin_languages_limit: 4
 
       - name: Indepth analysis
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@main
         with:
           filename: metrics.plugin.languages.indepth.svg
           token: ${{ secrets.METRICS_TOKEN }}
