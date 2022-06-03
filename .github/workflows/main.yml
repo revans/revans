@@ -12,7 +12,15 @@ jobs:
     permissions:
       contents: write
     steps:
-    
+
+      - name: Classic
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.classic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+
       - name: Achievements
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@main
@@ -60,14 +68,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_gists: yes
-
-      - name: Classic
-        uses: lowlighter/metrics@main
-        with:
-          filename: metrics.classic.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: header, repositories
-          plugin_lines: yes
 
       - name: XKCD of the day
         uses: lowlighter/metrics@main
