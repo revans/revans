@@ -7,6 +7,5 @@
 
 
 <img align="center" src="/metrics.plugin.languages.details.svg" alt="Language Details" width="100%">
-<img align="center" src="/metrics.plugin.languages.indepth.svg" alt="Indepth Language Details" width="100%">
 <img align="center" src="/metrics.plugin.screenshot.svg" alt="XKCD" width="100%">
 
