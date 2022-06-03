@@ -20,11 +20,12 @@ jobs:
           filename: achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
-          output_action: gist
-          committer_gist: ${{ secrets.METRICS_TOKEN }}
           plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_fortune: yes
+          plugin_achievements_only: >-
+            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
+            scripter, packager, explorer, infographile, manager
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: X
           
       - name: Most used (with details)
         uses: lowlighter/metrics@main
@@ -102,7 +103,6 @@ jobs:
           plugin_habits_charts: yes
           config_timezone: America/Boise
 
-
       - name: Recently starred
         uses: lowlighter/metrics@main
         with:
@@ -111,3 +111,13 @@ jobs:
           base: ""
           plugin_stars: yes
           plugin_stars_limit: 5
+
+      - name: Indepth analysis of Notable Contributions
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.plugin.notable.indepth.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_notable: yes
+          plugin_notable_indepth: yes
+          plugin_notable_repositories: yes
