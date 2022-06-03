@@ -5,7 +5,7 @@
 <img align="left" src="/metrics.plugin.gists.svg" alt="Gists" width="390">
 
 
-
+<img align="center" src="/metrics.plugin.followup.indepth.svg" alt="Pull Requests" width="100%">
 <img align="center" src="/metrics.plugin.languages.details.svg" alt="Language Details" width="100%">
 <img align="center" src="/metrics.plugin.screenshot.svg" alt="XKCD" width="100%">
 
