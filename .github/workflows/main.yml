@@ -52,26 +52,62 @@ jobs:
           plugin_languages_limit: 4
           plugin_languages_analysis_timeout: 15
 
-      - name: 🦑 General
-        if: ${{ success() || failure() }}
+      - name: Gists
         uses: lowlighter/metrics@main
         with:
-          filename: general.svg
-          token: ${{ secrets.TOKEN }}
-          base: header
-          base_indepth: yes
-          config_order: base.header, isocalendar, languages, notable, discussions, topics
-          output_action: gist
-          committer_gist: ${{ secrets.METRICS_TOKEN }}
-          plugin_isocalendar: yes
-          plugin_languages: yes
-          plugin_languages_ignored: html, css, tex, less, qmake, lex, cmake, gnuplot, vue, scala, c, c++, python, ejs
-          plugin_languages_details: lines, bytes-size, percentage
-          plugin_languages_sections: most-used, recently-used
-          plugin_languages_indepth: yes
-          plugin_languages_limit: 2
-          plugin_topics: yes
-          plugin_topics_limit: 0
-          plugin_topics_mode: icons
-          plugin_notable: yes
-          plugin_discussions: yes
+          filename: metrics.plugin.gists.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_gists: yes
+
+      - name: Classic
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.classic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+
+      - name: XKCD of the day
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.plugin.screenshot.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_screenshot: yes
+          plugin_screenshot_title: XKCD of the day
+          plugin_screenshot_url: https://xkcd.com
+          plugin_screenshot_selector: "#comic img"
+
+
+      - name: Midly interesting facts
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.plugin.habits.facts.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: no
+          config_timezone: America/Boise
+
+      - name: Recent activity charts
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.plugin.habits.charts.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: no
+          plugin_habits_charts: yes
+          config_timezone: America/Boise
+
+
+      - name: Recently starred
+        uses: lowlighter/metrics@main
+        with:
+          filename: metrics.plugin.stars.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_stars: yes
+          plugin_stars_limit: 5
